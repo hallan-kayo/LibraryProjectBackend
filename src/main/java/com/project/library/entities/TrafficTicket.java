@@ -23,12 +23,14 @@ public class TrafficTicket {
 	private Loan loan;
 
 	public TrafficTicket() {
+		
 	}
 
-	public TrafficTicket(Long id, int daysQuantity, double value) {
+	public TrafficTicket(Long id, int daysQuantity, double value, Loan loan) {
 		this.id = id;
 		this.daysQuantity = daysQuantity;
 		this.value = value;
+		this.loan = loan;
 	}
 
 	public Long getId() {
@@ -55,6 +57,14 @@ public class TrafficTicket {
 		this.value = value;
 	}
 
+	public Loan getLoan() {
+		return loan;
+	}
+
+	public void setLoan(Loan loan) {
+		this.loan = loan;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -74,8 +84,12 @@ public class TrafficTicket {
 
 	@Override
 	public String toString() {
-		return "TrafficTicket [id=" + id + ", daysQuantity=" + daysQuantity + ", value=" + value + "]";
+		return "TrafficTicket [id=" + id + ", daysQuantity=" + daysQuantity + ", value=" + value + ", loan=" + loan
+				+ "]";
 	}
-
+	
+	
+	
+	
 	
 }
