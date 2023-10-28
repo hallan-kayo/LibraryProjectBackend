@@ -1,9 +1,10 @@
-package com.project.library;
+package com.project.library.entities;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class User{
-	private int id;
+	private Long id;
     private String name;
     private String username;
     private String CPF;
@@ -12,10 +13,12 @@ public class User{
 	private String email;
 	private String password;
 	
+	private Adress adress = new Adress();
+	
 	public User() {
 	}
 	
-	public User(int id, String name, String username, String CPF, Date dateOfBirth, String phone, String email, String password) {
+	public User(Long id, String name, String username, String CPF, Date dateOfBirth, String phone, String email, String password) {
 		this.id = id;
 		this.name = name;
 		this.username = username;
@@ -26,11 +29,11 @@ public class User{
 		this.password = password;
 	}
 	
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 	
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	
@@ -42,11 +45,11 @@ public class User{
 		this.name = name;
 	}
 	
-	public String getUserName() {
+	public String getUsername() {
 		return username;
 	}
 	
-	public void setUserName(String username) {
+	public void setUsername(String username) {
 		this.username = username;
 	}
 	
@@ -89,4 +92,37 @@ public class User{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public Adress getAdress() {
+		return adress;
+	}
+
+	public void setAdress(Adress adress) {
+		this.adress = adress;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		return id == other.id;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", username=" + username + ", CPF=" + CPF + ", dateOfBirth="
+				+ dateOfBirth + ", phone=" + phone + ", email=" + email + ", password=" + password + "]";
+	}
+	
+	
 }
