@@ -13,12 +13,11 @@ import jakarta.persistence.OneToMany;
 @DiscriminatorValue(value = "Reader")
 public class Reader extends Users {
 
-<<<<<<< HEAD
+
 	public Reader() {
 	}
-=======
+
 	private Integer readerStatus;
->>>>>>> ef37c4c6aff15956c3780bd40dc77771ac1b17f5
 	
 	@OneToMany(mappedBy = "LinkedReader")
 	private Set<Reserve> reserves = new HashSet<>(); 
@@ -26,9 +25,6 @@ public class Reader extends Users {
 	@OneToMany(mappedBy = "LinkedReader")
 	private Set<Loan> loans = new HashSet<>();
  
-	public Reader() {
-		super();
-	}
 	
 	public ReaderStatus getOrderStatus() {
 		return ReaderStatus.valueOf(readerStatus);

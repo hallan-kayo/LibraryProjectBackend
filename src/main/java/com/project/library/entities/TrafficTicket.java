@@ -2,10 +2,12 @@ package com.project.library.entities;
 
 import java.util.Objects;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -17,7 +19,7 @@ public class TrafficTicket {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private int daysQuantity;
-	private double value;
+	private double fineValue;
 	
 	@OneToOne
 	private Loan loan;
@@ -25,10 +27,10 @@ public class TrafficTicket {
 	public TrafficTicket() {
 	}
 
-	public TrafficTicket(Long id, int daysQuantity, double value) {
+	public TrafficTicket(Long id, int daysQuantity, double fineValue) {
 		this.id = id;
 		this.daysQuantity = daysQuantity;
-		this.value = value;
+		this.fineValue = fineValue;
 	}
 
 	public Long getId() {
@@ -48,11 +50,11 @@ public class TrafficTicket {
 	}
 
 	public double getValue() {
-		return value;
+		return fineValue;
 	}
 
-	public void setValue(double value) {
-		this.value = value;
+	public void setValue(double fineValue) {
+		this.fineValue = fineValue;
 	}
 
 	@Override
@@ -74,7 +76,7 @@ public class TrafficTicket {
 
 	@Override
 	public String toString() {
-		return "TrafficTicket [id=" + id + ", daysQuantity=" + daysQuantity + ", value=" + value + "]";
+		return "TrafficTicket [id=" + id + ", daysQuantity=" + daysQuantity + ", fineValue=" + fineValue + "]";
 	}
 
 	
