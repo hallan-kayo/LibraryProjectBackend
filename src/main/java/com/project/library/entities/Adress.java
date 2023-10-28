@@ -2,7 +2,20 @@ package com.project.library.entities;
 
 import java.util.Objects;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.MapsId;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table
 public class Adress {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String publicPlace;
 	private Long number;
@@ -11,12 +24,14 @@ public class Adress {
 	private String city;
 	private String state;
 
-	private User user = new User();
+	@OneToOne(mappedBy = "adress")
+	@MapsId
+	private Users user;
 
 	public Adress() {
 	}
 
-	public Adress(Long id, String publicPlace, Long number, String neighborhood, String CEP, String city, String state) {
+	public Adress(Long id, String publicPlace, Long number, String neighborhood, String CEP, String city, String state, Users user) {
 		this.id = id;
 		this.publicPlace = publicPlace;
 		this.number = number;
@@ -24,6 +39,7 @@ public class Adress {
 		this.CEP = CEP;
 		this.city = city;
 		this.state = state;
+		this.user = user;
 	}
 
 	public Long getId() {
@@ -82,11 +98,11 @@ public class Adress {
 		this.state = state;
 	}
 
-	public User getUser() {
+	public Users getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(Users user) {
 		this.user = user;
 	}
 

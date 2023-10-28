@@ -3,7 +3,24 @@ package com.project.library.entities;
 import java.util.Date;
 import java.util.Objects;
 
-public class User{
+import jakarta.persistence.DiscriminatorColumn;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "Type")
+public class Users{
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
     private String name;
     private String username;
@@ -13,12 +30,13 @@ public class User{
 	private String email;
 	private String password;
 	
-	private Adress adress = new Adress();
+	@OneToOne
+	private Adress adress;
 	
-	public User() {
+	public Users() {
 	}
 	
-	public User(Long id, String name, String username, String CPF, Date dateOfBirth, String phone, String email, String password) {
+	public Users(Long id, String name, String username, String CPF, Date dateOfBirth, String phone, String email, String password, Adress adress) {
 		this.id = id;
 		this.name = name;
 		this.username = username;
@@ -27,6 +45,7 @@ public class User{
 		this.phone = phone; 
 		this.email = email;
 		this.password = password;
+		this.adress = adress;
 	}
 	
 	public Long getId() {
@@ -114,7 +133,7 @@ public class User{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		User other = (User) obj;
+		Users other = (Users) obj;
 		return id == other.id;
 	}
 
