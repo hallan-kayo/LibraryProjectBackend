@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -23,6 +24,10 @@ public class Loan {
 	
 	@ManyToOne
 	private Book book = new Book ();
+	
+	@ManyToOne
+	@JoinColumn(name = "Reader")
+	private Reader LinkedReader = new Reader();
 
 	public Loan() {
 	}
@@ -65,6 +70,14 @@ public class Loan {
 
 	public void setBook(Book book) {
 		this.book = book;
+	}
+
+	public Reader getLinkedReader() {
+		return LinkedReader;
+	}
+
+	public void setLinkedReader(Reader linkedReader) {
+		LinkedReader = linkedReader;
 	}
 
 	@Override

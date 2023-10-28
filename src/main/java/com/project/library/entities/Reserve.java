@@ -22,9 +22,13 @@ public class Reserve {
 	@ManyToOne
 	private Book book = new Book();
  	
+	@ManyToOne
+	private Reader LinkedReader = new Reader();
+	
 	public Reserve () {
 		
 	}
+	
 
 	public Reserve(Long id, Instant reserveDate, Book book) {
 		this.id = id;
@@ -55,6 +59,17 @@ public class Reserve {
 	public void setBook(Book book) {
 		this.book = book;
 	}
+	
+
+	public Reader getLinkedReader() {
+		return LinkedReader;
+	}
+
+
+	public void setLinkedReader(Reader linkedReader) {
+		LinkedReader = linkedReader;
+	}
+
 
 	@Override
 	public int hashCode() {
