@@ -1,6 +1,8 @@
 package com.project.library.entities;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,6 +25,9 @@ public class Book {
 	
 	@ManyToOne
 	private Category category = new Category();
+	
+	@OneToMany(mappedBy = "book")
+	private Set<Reserve> reserves = new HashSet<>();
 	
 	public Book() {
 	}
@@ -71,8 +76,6 @@ public class Book {
 		return quantity;
 	}
 	
-	
-
 	public Category getCategory() {
 		return category;
 	}
