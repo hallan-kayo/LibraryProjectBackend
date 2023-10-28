@@ -26,12 +26,11 @@ public class Loan {
 	private Book book = new Book ();
 	
 	@ManyToOne
-<<<<<<< HEAD
 	@JoinColumn(name = "Reader")
 	private Reader LinkedReader = new Reader();
-=======
+	
+	@ManyToOne
 	private Manager linkedManager = new Manager();
->>>>>>> 9f3e116ece1fde71461c924636059152fa69f9ef
 
 	public Loan() {
 	}
