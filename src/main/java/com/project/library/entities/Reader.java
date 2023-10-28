@@ -12,7 +12,6 @@ import jakarta.persistence.OneToMany;
 public class Reader extends Users {
 
 	public Reader() {
-		super();
 	}
 	
 	@OneToMany(mappedBy = "LinkedReader")

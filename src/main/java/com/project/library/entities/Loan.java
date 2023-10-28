@@ -9,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -26,12 +27,14 @@ public class Loan {
 	private Book book = new Book ();
 	
 	@ManyToOne
-<<<<<<< HEAD
 	@JoinColumn(name = "Reader")
 	private Reader LinkedReader = new Reader();
-=======
+	
+	@OneToOne(mappedBy = "loan")
+	private TrafficTicket trafficTicket;
+
+	@ManyToOne
 	private Manager linkedManager = new Manager();
->>>>>>> 9f3e116ece1fde71461c924636059152fa69f9ef
 
 	public Loan() {
 	}
@@ -82,6 +85,14 @@ public class Loan {
 
 	public void setLinkedReader(Reader linkedReader) {
 		LinkedReader = linkedReader;
+	}
+
+	public Manager getLinkedManager() {
+		return linkedManager;
+	}
+
+	public void setLinkedManager(Manager linkedManager) {
+		this.linkedManager = linkedManager;
 	}
 
 	@Override
