@@ -23,6 +23,9 @@ public class Loan {
 	
 	@ManyToOne
 	private Book book = new Book ();
+	
+	@ManyToOne
+	private Manager linkedManager = new Manager();
 
 	public Loan() {
 	}
