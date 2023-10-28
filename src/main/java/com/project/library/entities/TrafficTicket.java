@@ -2,10 +2,12 @@ package com.project.library.entities;
 
 import java.util.Objects;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -17,7 +19,7 @@ public class TrafficTicket {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private int daysQuantity;
-	private double value;
+	private double fineValue;
 	
 	@OneToOne
 	private Loan loan;
@@ -26,11 +28,18 @@ public class TrafficTicket {
 		
 	}
 
+<<<<<<< HEAD
 	public TrafficTicket(Long id, int daysQuantity, double value, Loan loan) {
 		this.id = id;
 		this.daysQuantity = daysQuantity;
 		this.value = value;
 		this.loan = loan;
+=======
+	public TrafficTicket(Long id, int daysQuantity, double fineValue) {
+		this.id = id;
+		this.daysQuantity = daysQuantity;
+		this.fineValue = fineValue;
+>>>>>>> 2f3f385759fb03292e006324a963a9302d491b89
 	}
 
 	public Long getId() {
@@ -50,11 +59,11 @@ public class TrafficTicket {
 	}
 
 	public double getValue() {
-		return value;
+		return fineValue;
 	}
 
-	public void setValue(double value) {
-		this.value = value;
+	public void setValue(double fineValue) {
+		this.fineValue = fineValue;
 	}
 
 	public Loan getLoan() {
@@ -84,8 +93,12 @@ public class TrafficTicket {
 
 	@Override
 	public String toString() {
+<<<<<<< HEAD
 		return "TrafficTicket [id=" + id + ", daysQuantity=" + daysQuantity + ", value=" + value + ", loan=" + loan
 				+ "]";
+=======
+		return "TrafficTicket [id=" + id + ", daysQuantity=" + daysQuantity + ", fineValue=" + fineValue + "]";
+>>>>>>> 2f3f385759fb03292e006324a963a9302d491b89
 	}
 	
 	

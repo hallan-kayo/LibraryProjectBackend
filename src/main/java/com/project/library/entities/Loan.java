@@ -3,12 +3,14 @@ package com.project.library.entities;
 import java.time.Instant;
 import java.util.Objects;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -30,11 +32,19 @@ public class Loan {
 	@JoinColumn(name = "Reader")
 	private Reader LinkedReader = new Reader();
 	
+<<<<<<< HEAD
 
 	@OneToOne(mappedBy = "loan")
 	private TrafficTicket trafficTicket;
 
     @ManyToOne
+=======
+	@OneToOne(mappedBy = "loan", cascade = CascadeType.ALL)
+	@MapsId
+	private TrafficTicket trafficTicket;
+
+	@ManyToOne
+>>>>>>> 2f3f385759fb03292e006324a963a9302d491b89
 	private Manager linkedManager = new Manager();
 
 	public Loan() {
