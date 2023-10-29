@@ -7,18 +7,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.project.library.entities.Category;
-import com.project.library.services.CategoryService;
+import com.project.library.entities.Book;
+import com.project.library.services.BookService;
 
 @RestController
-@RequestMapping(value = "/categories")
-public class CategoryController {
+@RequestMapping(value = "/books")
+public class BookController {
 
 	@Autowired
-	private CategoryService categoryService;
+	private BookService bookService;
 	
 	@GetMapping
-	public List<Category> findAll(){
-		return categoryService.findAll();
+	public List<Book> findAll(){
+		return bookService.findAll();
 	}
 }

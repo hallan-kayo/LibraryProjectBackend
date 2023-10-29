@@ -5,20 +5,20 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.library.entities.Category;
-import com.project.library.repositories.CategoryRepository;
+import com.project.library.entities.Book;
+import com.project.library.repositories.BookRepository;
 
 import jakarta.transaction.Transactional;
 
 @Service
-public class CategoryService {
+public class BookService {
 
 	@Autowired
-	private CategoryRepository category;
+	private BookRepository bookRepository;
 	
 	@Transactional
-	public List<Category> findAll(){
-		List<Category> response = category.findAll();
+	public List<Book> findAll(){
+		List<Book> response = bookRepository.findAll();
 		return response;
 	}
 }
