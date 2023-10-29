@@ -2,12 +2,10 @@ package com.project.library.entities;
 
 import java.util.Objects;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -28,6 +26,7 @@ public class TrafficTicket {
 
 	}
 
+<<<<<<< HEAD
 
 	
 
@@ -40,6 +39,8 @@ public class TrafficTicket {
 	}
 
 
+=======
+>>>>>>> a47c1dee489d76161f000497570ce97781564e90
 	public TrafficTicket(Long id, int daysQuantity, double fineValue) {
 		this.id = id;
 		this.daysQuantity = daysQuantity;
@@ -102,6 +103,10 @@ public class TrafficTicket {
 				+ loan + "]";
 	}
 
+<<<<<<< HEAD
 
 
+=======
+	
+>>>>>>> a47c1dee489d76161f000497570ce97781564e90
 }

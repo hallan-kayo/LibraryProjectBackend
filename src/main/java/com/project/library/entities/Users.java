@@ -36,7 +36,7 @@ public class Users{
 	public Users() {
 	}
 	
-	public Users(Long id, String name, String username, String CPF, Date dateOfBirth, String phone, String email, String password, Adress adress) {
+	public Users(Long id, String name, String username, String CPF, Date dateOfBirth, String phone, String email, String password) {
 		this.id = id;
 		this.name = name;
 		this.username = username;
@@ -45,7 +45,6 @@ public class Users{
 		this.phone = phone; 
 		this.email = email;
 		this.password = password;
-		this.adress = adress;
 	}
 	
 	public Long getId() {
