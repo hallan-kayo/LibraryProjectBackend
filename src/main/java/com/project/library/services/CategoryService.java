@@ -27,6 +27,11 @@ public class CategoryService {
 		return response;
 	}
 	
+	@Transactional
+	public Category findById(Long id) {
+		return categoryRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException(id));
+	}
+	
 	public Category addCategory(Category category) {
 		return categoryRepository.save(category);
 	}

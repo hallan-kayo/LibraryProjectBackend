@@ -34,6 +34,11 @@ public class CategoryController {
 		return categoryService.findAll();
 	}
 	
+	@GetMapping(value = "/{id}")
+	public Category findById(@PathVariable Long id) {
+		return categoryService.findById(id);
+	}
+	
 	@PostMapping
 	public ResponseEntity<Category> addCategory(@RequestBody Category category){
 		category = categoryService.addCategory(category);
