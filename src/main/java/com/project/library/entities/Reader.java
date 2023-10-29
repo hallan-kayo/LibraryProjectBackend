@@ -14,28 +14,17 @@ import jakarta.persistence.OneToMany;
 public class Reader extends Users {
 
 
-<<<<<<< HEAD
-	private Integer readerStatus;
-
-=======
-	public Reader() {
-	}
-
-	private Integer readerStatus;
+    private Integer readerStatus;
 	
->>>>>>> 2f3f385759fb03292e006324a963a9302d491b89
 	@OneToMany(mappedBy = "LinkedReader")
 	private Set<Reserve> reserves = new HashSet<>(); 
 	
 	@OneToMany(mappedBy = "LinkedReader")
 	private Set<Loan> loans = new HashSet<>();
  
-<<<<<<< HEAD
 	public Reader() {
 		
 	}
-=======
->>>>>>> 2f3f385759fb03292e006324a963a9302d491b89
 	
 	public ReaderStatus getOrderStatus() {
 		return ReaderStatus.valueOf(readerStatus);

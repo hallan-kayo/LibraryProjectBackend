@@ -1,5 +1,9 @@
 package com.project.library.repositories;
 
-public interface ReserveRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.project.library.entities.Reserve;
+
+public interface ReserveRepository extends JpaRepository<Reserve, Long> {
 
 }

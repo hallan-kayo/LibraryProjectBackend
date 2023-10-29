@@ -20,26 +20,30 @@ public class TrafficTicket {
 	private Long id;
 	private int daysQuantity;
 	private double fineValue;
-	
+
 	@OneToOne
 	private Loan loan;
 
 	public TrafficTicket() {
-		
+
 	}
 
-<<<<<<< HEAD
-	public TrafficTicket(Long id, int daysQuantity, double value, Loan loan) {
+
+	
+
+	public TrafficTicket(Long id, int daysQuantity, double fineValue, Loan loan) {
+		super();
 		this.id = id;
 		this.daysQuantity = daysQuantity;
-		this.value = value;
+		this.fineValue = fineValue;
 		this.loan = loan;
-=======
+	}
+
+
 	public TrafficTicket(Long id, int daysQuantity, double fineValue) {
 		this.id = id;
 		this.daysQuantity = daysQuantity;
 		this.fineValue = fineValue;
->>>>>>> 2f3f385759fb03292e006324a963a9302d491b89
 	}
 
 	public Long getId() {
@@ -58,11 +62,11 @@ public class TrafficTicket {
 		this.daysQuantity = daysQuantity;
 	}
 
-	public double getValue() {
+	public double getfineValue() {
 		return fineValue;
 	}
 
-	public void setValue(double fineValue) {
+	public void setfineValue(double fineValue) {
 		this.fineValue = fineValue;
 	}
 
@@ -91,18 +95,13 @@ public class TrafficTicket {
 		return Objects.equals(id, other.id);
 	}
 
+
 	@Override
 	public String toString() {
-<<<<<<< HEAD
-		return "TrafficTicket [id=" + id + ", daysQuantity=" + daysQuantity + ", value=" + value + ", loan=" + loan
-				+ "]";
-=======
-		return "TrafficTicket [id=" + id + ", daysQuantity=" + daysQuantity + ", fineValue=" + fineValue + "]";
->>>>>>> 2f3f385759fb03292e006324a963a9302d491b89
+		return "TrafficTicket [id=" + id + ", daysQuantity=" + daysQuantity + ", fineValue=" + fineValue + ", loan="
+				+ loan + "]";
 	}
-	
-	
-	
-	
-	
+
+
+
 }
