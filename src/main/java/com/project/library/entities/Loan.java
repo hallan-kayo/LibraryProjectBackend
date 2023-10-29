@@ -10,7 +10,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -33,7 +32,6 @@ public class Loan {
 	private Reader LinkedReader = new Reader();
 	
 	@OneToOne(mappedBy = "loan", cascade = CascadeType.ALL)
-	@MapsId
 	private TrafficTicket trafficTicket;
 
 	@ManyToOne

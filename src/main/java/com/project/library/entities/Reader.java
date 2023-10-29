@@ -1,5 +1,6 @@
 package com.project.library.entities;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,11 +14,14 @@ import jakarta.persistence.OneToMany;
 @DiscriminatorValue(value = "Reader")
 public class Reader extends Users {
 
-
+	private Integer readerStatus;
+	
 	public Reader() {
 	}
-
-	private Integer readerStatus;
+	
+	public Reader(Long id, String name, String username, String CPF, Date dateOfBirth, String phone, String email, String password) {
+		super(id, name, username, CPF,dateOfBirth,phone, email, password);
+	}
 	
 	@OneToMany(mappedBy = "LinkedReader")
 	private Set<Reserve> reserves = new HashSet<>(); 
