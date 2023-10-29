@@ -23,6 +23,7 @@ public class TrafficTicket {
 	private Loan loan;
 
 	public TrafficTicket() {
+		
 	}
 
 	public TrafficTicket(Long id, int daysQuantity, double fineValue) {
@@ -55,6 +56,14 @@ public class TrafficTicket {
 		this.fineValue = fineValue;
 	}
 
+	public Loan getLoan() {
+		return loan;
+	}
+
+	public void setLoan(Loan loan) {
+		this.loan = loan;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -74,7 +83,8 @@ public class TrafficTicket {
 
 	@Override
 	public String toString() {
-		return "TrafficTicket [id=" + id + ", daysQuantity=" + daysQuantity + ", fineValue=" + fineValue + "]";
+		return "TrafficTicket [id=" + id + ", daysQuantity=" + daysQuantity + ", fineValue=" + fineValue + ", loan="
+				+ loan + "]";
 	}
 
 	

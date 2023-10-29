@@ -18,20 +18,19 @@ public class Adress {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String publicPlace;
-	private Long number;
+	private Integer number;
 	private String neighborhood;
 	private String CEP;
 	private String city;
 	private String state;
 
 	@OneToOne(mappedBy = "adress")
-	@MapsId
 	private Users user;
 
 	public Adress() {
 	}
 
-	public Adress(Long id, String publicPlace, Long number, String neighborhood, String CEP, String city, String state, Users user) {
+	public Adress(Long id, String publicPlace, Integer number, String neighborhood, String CEP, String city, String state) {
 		this.id = id;
 		this.publicPlace = publicPlace;
 		this.number = number;
@@ -39,7 +38,6 @@ public class Adress {
 		this.CEP = CEP;
 		this.city = city;
 		this.state = state;
-		this.user = user;
 	}
 
 	public Long getId() {
@@ -58,11 +56,11 @@ public class Adress {
 		this.publicPlace = publicPlace;
 	}
 
-	public Long getNumber() {
+	public Integer getNumber() {
 		return number;
 	}
 
-	public void setNumber(Long number) {
+	public void setNumber(Integer number) {
 		this.number = number;
 	}
 

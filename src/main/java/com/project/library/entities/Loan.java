@@ -30,7 +30,7 @@ public class Loan {
 	@ManyToOne
 	@JoinColumn(name = "Reader")
 	private Reader LinkedReader = new Reader();
-	
+
 	@OneToOne(mappedBy = "loan", cascade = CascadeType.ALL)
 	private TrafficTicket trafficTicket;
 
