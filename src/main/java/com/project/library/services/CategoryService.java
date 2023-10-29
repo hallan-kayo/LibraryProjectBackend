@@ -12,6 +12,7 @@ import com.project.library.repositories.CategoryRepository;
 import com.project.library.services.exceptions.DatabaseException;
 import com.project.library.services.exceptions.ResourceNotFoundException;
 
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 
 @Service
@@ -41,5 +42,22 @@ public class CategoryService {
 			throw new DatabaseException(e.getMessage());
 		}
 		
+	}
+	
+	@Transactional
+	public Category updateCategory(Long id, Category category) {
+		try {
+			Category entity = categoryRepository.getReferenceById(id);
+			updateData(entity, category);
+			return categoryRepository.save(entity);
+		}
+		catch(EntityNotFoundException e) {
+			e.printStackTrace();
+			throw new ResourceNotFoundException(id);
+		}
+	}
+	
+	private void updateData(Category entity, Category obj) {
+		entity.setName(obj.getName());
 	}
 }
