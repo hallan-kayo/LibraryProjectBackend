@@ -30,17 +30,10 @@ public class Loan {
 	@ManyToOne
 	@JoinColumn(name = "Reader")
 	private Reader LinkedReader = new Reader();
-<<<<<<< HEAD
-	
 
 	@OneToOne(mappedBy = "loan")
 	private TrafficTicket trafficTicket;
 
-=======
-
-	@OneToOne(mappedBy = "loan", cascade = CascadeType.ALL)
-	private TrafficTicket trafficTicket;
->>>>>>> a47c1dee489d76161f000497570ce97781564e90
 
 	@ManyToOne
 	private Manager linkedManager = new Manager();

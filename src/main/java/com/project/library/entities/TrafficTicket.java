@@ -26,9 +26,6 @@ public class TrafficTicket {
 
 	}
 
-<<<<<<< HEAD
-
-	
 
 	public TrafficTicket(Long id, int daysQuantity, double fineValue, Loan loan) {
 		super();
@@ -39,8 +36,6 @@ public class TrafficTicket {
 	}
 
 
-=======
->>>>>>> a47c1dee489d76161f000497570ce97781564e90
 	public TrafficTicket(Long id, int daysQuantity, double fineValue) {
 		this.id = id;
 		this.daysQuantity = daysQuantity;
@@ -101,12 +96,5 @@ public class TrafficTicket {
 	public String toString() {
 		return "TrafficTicket [id=" + id + ", daysQuantity=" + daysQuantity + ", fineValue=" + fineValue + ", loan="
 				+ loan + "]";
-	}
-
-<<<<<<< HEAD
-
-
-=======
-	
->>>>>>> a47c1dee489d76161f000497570ce97781564e90
+    }
 }
