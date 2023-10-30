@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -24,8 +27,15 @@ public class Manager extends Users{
 		super(id, name, username, CPF,dateOfBirth,phone, email, password);
 	}
 	
+	@JsonIgnore
 	public List<Loan> getLinkedLoans() {
 		return linkedLoans;
 	}
+	
+	@Override
+	@JsonProperty("Type")
+    public String getType() {
+        return "Manager";
+    }
 
 }

@@ -2,6 +2,8 @@ package com.project.library.entities;
 
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,6 +26,7 @@ public class Adress {
 	private String city;
 	private String state;
 
+	@JsonIgnore
 	@OneToOne(mappedBy = "adress")
 	private Users user;
 
