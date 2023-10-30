@@ -68,7 +68,7 @@ public class TestConfig implements CommandLineRunner{
 		
 		
 		Reader re1 = new Reader(null, "halan Caio Pereira do Nascimento", "Hallan", 
-				"583454", format.formatToDate("17/06/2001"), "8954589", "hfesfdsop", "23432fdsf");
+				"583454", format.formatToDate("17/06/2001"), "8954589", "hallankayo20@gmail.com", "1234");
 		
 		Reader re2 = new Reader(null, "Carlos Eduardo", "Dudu", 
 				"753475", format.formatToDate("16/02/2003"), "6547", "hfesf6fgwgdsop", "gfdwg546");

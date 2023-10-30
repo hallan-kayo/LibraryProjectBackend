@@ -3,6 +3,9 @@ package com.project.library.entities;
 import java.util.Date;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,7 +19,8 @@ import jakarta.persistence.Table;
 @Entity
 @Table
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "Type")
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@DiscriminatorColumn(name = "type")
 public class Users{
 	
 	@Id
@@ -46,6 +50,11 @@ public class Users{
 		this.email = email;
 		this.password = password;
 	}
+	
+	@JsonProperty("Type")
+    public String getType() {
+        return "User";
+    }
 	
 	public Long getId() {
 		return id;

@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
@@ -30,5 +31,11 @@ public class Manager extends Users{
 	public List<Loan> getLinkedLoans() {
 		return linkedLoans;
 	}
+	
+	@Override
+	@JsonProperty("Type")
+    public String getType() {
+        return "Manager";
+    }
 
 }
