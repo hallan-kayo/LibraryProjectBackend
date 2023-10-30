@@ -3,6 +3,8 @@ package com.project.library.entities;
 import java.time.Instant;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,6 +27,7 @@ public class Loan {
 	private Instant returnForecast;
 	
 	@ManyToOne
+	@JsonIgnore
 	private Book book = new Book ();
 	
 	@ManyToOne

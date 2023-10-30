@@ -30,6 +30,7 @@ public class Book {
 	private Category category = new Category();
 	
 	@OneToMany(mappedBy = "book")
+	@JsonIgnore
 	private Set<Reserve> reserves = new HashSet<>();
 	
 	public Book() {
@@ -113,6 +114,9 @@ public class Book {
 		return "Book [id=" + id + ", title=" + title + ", author=" + author + ", edition=" + edition + ", quantity="
 				+ quantity + "]";
 	}
-	
+
+
+
+
 	
 }

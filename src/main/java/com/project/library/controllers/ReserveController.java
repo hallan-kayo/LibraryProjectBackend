@@ -16,41 +16,41 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.project.library.entities.Book;
-import com.project.library.services.BookService;
+import com.project.library.entities.Reserve;
+import com.project.library.services.ReserveService;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping(value = "/books")
-public class BookController {
+@RequestMapping(value = "/reserves")
+public class ReserveController {
 
 	@Autowired
-	private BookService bookService;
+	private ReserveService reserveService;
 	
 	@GetMapping
-	public List<Book> findAll(){
-		return bookService.findAll();
+	public List<Reserve> findAll(){
+		return reserveService.findAll();
 	}
 	
 	@GetMapping(value = "/{id}")
-	public Book findById(@PathVariable Long id) {
-		return bookService.findByid(id);
+	public Reserve findById(@PathVariable Long id) {
+		return reserveService.findById(id);
 	}
 	
 	@PostMapping
-	public ResponseEntity<Book> addBook(@RequestBody Book book){
-		book = bookService.addBook(book);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/id").buildAndExpand(book.getId()).toUri();
-		return ResponseEntity.created(uri).body(book);
+	public ResponseEntity<Reserve> addReserve(@RequestBody Reserve reserve){
+		reserve = reserveService.addReserve(reserve);
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/id").buildAndExpand(reserve.getId()).toUri();
+		return ResponseEntity.created(uri).body(reserve);
 	}
 	
 	@DeleteMapping(value = "/{id}")
-	public void deleteBook(@PathVariable Long id) {
-		bookService.deleteBook(id);
+	public void deleteReserve(@PathVariable Long id) {
+		reserveService.deleteReserve(id);
 	}
 	
 	@PutMapping(value = "/{id}")
-	public Book updateBook(@PathVariable Long id,@RequestBody Book book) {
-		return bookService.updateBook(id, book);
+	public Reserve updateReserve(@PathVariable Long id,@RequestBody Reserve reserve) {
+		return reserveService.updateReserve(id, reserve);
 	}
 }

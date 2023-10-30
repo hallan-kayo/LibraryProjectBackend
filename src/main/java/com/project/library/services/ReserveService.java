@@ -7,8 +7,8 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
-import com.project.library.entities.Book;
-import com.project.library.repositories.BookRepository;
+import com.project.library.entities.Reserve;
+import com.project.library.repositories.ReserveRepository;
 import com.project.library.services.exceptions.DatabaseException;
 import com.project.library.services.exceptions.ResourceNotFoundException;
 
@@ -16,29 +16,29 @@ import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 
 @Service
-public class BookService {
+public class ReserveService {
 
 	@Autowired
-	private BookRepository bookRepository;
+	private ReserveRepository reserveRepository;
 	
 	@Transactional
-	public List<Book> findAll(){
-		List<Book> response = bookRepository.findAll();
+	public List<Reserve> findAll(){
+		List<Reserve> response = reserveRepository.findAll();
 		return response;
 	}
 	
 	@Transactional
-	public Book findByid(Long id) {
-		return bookRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException(id));
+	public Reserve findById(Long id) {
+		return reserveRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException(id));
 	}
 	
-	public Book addBook(Book book) {
-		return bookRepository.save(book);
+	public Reserve addReserve(Reserve reserve) {
+		return reserveRepository.save(reserve);
 	}
 	
-	public void deleteBook(Long id) {
+	public void deleteReserve(Long id) {
 		try {
-			bookRepository.deleteById(id);
+			reserveRepository.deleteById(id);
 		}
 		catch(EmptyResultDataAccessException e) {
 			throw new ResourceNotFoundException(id);
@@ -49,11 +49,11 @@ public class BookService {
 	}
 	
 	@Transactional
-	public Book updateBook(Long id, Book book) {
+	public Reserve updateReserve(Long id, Reserve reserve) {
 		try {
-			Book entity = bookRepository.getReferenceById(id);
-			updateData(entity, book);
-			return bookRepository.save(entity);
+			Reserve entity = reserveRepository.getReferenceById(id);
+			updateData(entity, reserve);
+			return reserveRepository.save(entity);
 		}
 		catch(EntityNotFoundException e) {
 			e.printStackTrace();
@@ -61,8 +61,8 @@ public class BookService {
 		}
 	}
 
-	private void updateData(Book entity, Book obj) {
-		entity.setTitle(obj.getTitle());
+	private void updateData(Reserve entity, Reserve obj) {
+		entity.setReserveDate(obj.getReserveDate());
+		
 	}
-	
 }

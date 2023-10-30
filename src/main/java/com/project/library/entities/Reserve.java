@@ -3,6 +3,8 @@ package com.project.library.entities;
 import java.time.Instant;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,16 +27,17 @@ public class Reserve {
 	@ManyToOne
 	private Reader LinkedReader = new Reader();
 	
-	public Reserve () {
-		
-	}
 	
 
-	public Reserve(Long id, Instant reserveDate, Book book) {
+	public Reserve() {
+	}
+
+
+	public Reserve(Long id, Instant reserveDate) {
 		this.id = id;
 		this.reserveDate = reserveDate;
-		this.book = book;
 	}
+
 
 	public Long getId() {
 		return id;

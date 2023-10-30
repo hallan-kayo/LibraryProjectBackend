@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.project.library.entities.enums.ReaderStatus;
 
 import jakarta.persistence.DiscriminatorValue;
@@ -17,6 +18,7 @@ public class Reader extends Users {
 	private Integer readerStatus = 1;
 	
 	@OneToMany(mappedBy = "LinkedReader")
+	@JsonIgnore
 	private Set<Reserve> reserves = new HashSet<>(); 
 	
 	@OneToMany(mappedBy = "LinkedReader")
