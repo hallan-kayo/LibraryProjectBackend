@@ -11,16 +11,9 @@ import org.springframework.context.annotation.Profile;
 import com.project.library.entities.Adress;
 import com.project.library.entities.Book;
 import com.project.library.entities.Category;
-<<<<<<< HEAD
-=======
-import com.project.library.entities.Reader;
-import com.project.library.entities.Reader;
->>>>>>> cd1ebe7a612be44999e5a02780a4f830bf934439
 import com.project.library.entities.Manager;
 import com.project.library.entities.Reader;
 import com.project.library.entities.Reserve;
-import com.project.library.entities.Reserve;
-import com.project.library.entities.Users;
 import com.project.library.format.DateFormat;
 import com.project.library.repositories.AdressRepository;
 import com.project.library.repositories.BookRepository;
@@ -82,12 +75,9 @@ public class TestConfig implements CommandLineRunner{
 		bookRepository.saveAll(Arrays.asList(b1,b2,b3,b4));
 		
 		
-		Reader re1 = new Reader(null, "halan Caio Pereira do Nascimento", "Hallan", 
-<<<<<<< HEAD
-				"583454", format.formatToDate("17/06/2001"), "8954589", "hfesfdsop", "23432fdsf");
-=======
+		Reader re1 = new Reader(null, "halan Caio Pereira do Nascimento", "Hallan",
 				"583454", format.formatToDate("17/06/2001"), "8954589", "hallankayo20@gmail.com", "1234");
->>>>>>> cd1ebe7a612be44999e5a02780a4f830bf934439
+
 		
 		Reader re2 = new Reader(null, "Carlos Eduardo", "Dudu", 
 				"753475", format.formatToDate("16/02/2003"), "6547", "hfesf6fgwgdsop", "gfdwg546");
@@ -136,7 +126,7 @@ public class TestConfig implements CommandLineRunner{
 				"23131223", format.formatToDate("23/11/1986"), "98392813", "andressa231233", "kl32131");
 		
 		Manager ma2 = new Manager(null, "Gabriel Otton", "Biel", 
-				"789321873", format.formatToDate("01/12/2002"), "9321313213", "biel321312", "lol3213");
+				"789321873", format.formatToDate("01/12/2002"), "9321313213", "biel", "1234");
 		
 		Manager ma3 = new Manager(null, "Serjao dos Foguetes", "Serjao", 
 				"93829183", format.formatToDate("21/09/1973"), "38921389", "serjaoeclipse32321", "projetinho3213");

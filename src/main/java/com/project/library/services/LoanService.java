@@ -48,20 +48,20 @@ public class LoanService {
 		}
 	}
 	
-//	public Loan updateLoan (Long id, Loan loan) {
-//		try {
-//			Loan entity = loanRepository.getReferenceById(id);
-//			updateData(entity, loan);
-//			return loanRepository.save(entity);
-//		}
-//		catch(EntityNotFoundException e) {
-//			e.printStackTrace();
-//			throw new ResourceNotFoundException(id);
-//		}
-//	}
-//
-//	private void updateData(Loan entity, Loan obj) {
+	public Loan updateLoan (Long id, Loan loan) {
+		try {
+			Loan entity = loanRepository.getReferenceById(id);
+			updateData(entity, loan);
+			return loanRepository.save(entity);
+		}
+		catch(EntityNotFoundException e) {
+			e.printStackTrace();
+			throw new ResourceNotFoundException(id);
+		}
+	}
+
+	private void updateData(Loan entity, Loan obj) {
 //		entity.
-//		
-//	}
+		
+	}
 }
