@@ -33,6 +33,10 @@ public class Reader extends Users {
 	public Reader(Long id, String name, String username, String CPF, Date dateOfBirth, String phone, String email, String password) {
 		super(id, name, username, CPF,dateOfBirth,phone, email, password);
 	}
+	
+	public Reader(Long id, String name, String username, String CPF, Date dateOfBirth, String phone, String email, String password, Adress adress) {
+		super(id, name, username, CPF,dateOfBirth,phone, email, password, adress);
+	}
 
 	@Override
 	@JsonProperty("Type")

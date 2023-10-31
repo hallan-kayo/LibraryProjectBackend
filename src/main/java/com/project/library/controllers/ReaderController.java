@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.project.library.entities.Manager;
+import com.project.library.entities.Adress;
 import com.project.library.entities.Reader;
 import com.project.library.services.ReaderService;
 

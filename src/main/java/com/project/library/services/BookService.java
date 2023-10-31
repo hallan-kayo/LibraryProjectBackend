@@ -8,7 +8,9 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import com.project.library.entities.Book;
+import com.project.library.entities.Category;
 import com.project.library.repositories.BookRepository;
+import com.project.library.repositories.CategoryRepository;
 import com.project.library.services.exceptions.DatabaseException;
 import com.project.library.services.exceptions.ResourceNotFoundException;
 
@@ -20,6 +22,8 @@ public class BookService {
 
 	@Autowired
 	private BookRepository bookRepository;
+	@Autowired
+	private CategoryRepository categoryRepository;
 	
 	@Transactional
 	public List<Book> findAll(){
@@ -33,6 +37,12 @@ public class BookService {
 	}
 	
 	public Book addBook(Book book) {
+		Category c = categoryRepository.findByName(book.getCategory().getName());
+		if (c == null) {
+			System.out.println(c);
+			c = categoryRepository.save(book.getCategory());
+		}
+		book.setCategory(c);
 		return bookRepository.save(book);
 	}
 	

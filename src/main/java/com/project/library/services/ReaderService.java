@@ -7,7 +7,9 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
+import com.project.library.entities.Adress;
 import com.project.library.entities.Reader;
+import com.project.library.repositories.AdressRepository;
 import com.project.library.repositories.ReaderRepository;
 import com.project.library.services.exceptions.DatabaseException;
 import com.project.library.services.exceptions.ResourceNotFoundException;
@@ -21,6 +23,9 @@ public class ReaderService {
 	@Autowired
 	private ReaderRepository readerRepository;
 	
+	@Autowired
+	private AdressRepository adressRepository;
+	
 	@Transactional
 	public List<Reader> findAll(){
 		List<Reader> response = readerRepository.findAll();
@@ -33,6 +38,8 @@ public class ReaderService {
 	}
 	
 	public Reader addReader(Reader reader) {
+		Adress userAdress = adressRepository.save(reader.getAdress());
+		reader.setAdress(userAdress);
 		return readerRepository.save(reader);
 	}
 	

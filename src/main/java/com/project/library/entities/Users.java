@@ -51,6 +51,18 @@ public class Users{
 		this.password = password;
 	}
 	
+	public Users(Long id, String name, String username, String CPF, Date dateOfBirth, String phone, String email, String password, Adress adress) {
+		this.id = id;
+		this.name = name;
+		this.username = username;
+		this.CPF = CPF;
+		this.dateOfBirth = dateOfBirth;
+		this.phone = phone; 
+		this.email = email;
+		this.password = password;
+		this.adress = adress;
+	}
+	
 	@JsonProperty("Type")
     public String getType() {
         return "User";
