@@ -7,8 +7,10 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
+import com.project.library.entities.Adress;
 import com.project.library.entities.Manager;
 import com.project.library.entities.Manager;
+import com.project.library.repositories.AdressRepository;
 import com.project.library.repositories.ManagerRepository;
 import com.project.library.services.exceptions.DatabaseException;
 import com.project.library.services.exceptions.ResourceNotFoundException;
@@ -22,6 +24,9 @@ public class ManagerService {
 	@Autowired
 	private ManagerRepository managerRepository;
 	
+	@Autowired
+	private AdressRepository adressRepository;
+	
 	@Transactional
 	public List<Manager> findAll(){
 		List<Manager> response = managerRepository.findAll();
@@ -34,6 +39,8 @@ public class ManagerService {
 	}
 	
 	public Manager addManager(Manager manager) {
+		Adress userAdress = adressRepository.save(manager.getAdress());
+		manager.setAdress(userAdress);
 		return managerRepository.save(manager);
 	}
 	

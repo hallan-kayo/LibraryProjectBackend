@@ -15,9 +15,9 @@ import jakarta.persistence.OneToMany;
 @DiscriminatorValue(value = "Manager")
 public class Manager extends Users{
 	
+	
 	@OneToMany(mappedBy = "linkedManager")
 	private List<Loan> linkedLoans = new ArrayList<>();
-	
 	
 
 	public Manager() {
@@ -27,6 +27,7 @@ public class Manager extends Users{
 		super(id, name, username, CPF,dateOfBirth,phone, email, password);
 	}
 	
+
 	@JsonIgnore
 	public List<Loan> getLinkedLoans() {
 		return linkedLoans;
