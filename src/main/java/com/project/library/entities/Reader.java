@@ -4,7 +4,10 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 79183fa7e656eab8442d7ad7a64cc4aebaf058c3
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.project.library.entities.enums.ReaderStatus;

@@ -11,6 +11,11 @@ import org.springframework.context.annotation.Profile;
 import com.project.library.entities.Adress;
 import com.project.library.entities.Book;
 import com.project.library.entities.Category;
+<<<<<<< HEAD
+=======
+import com.project.library.entities.Reader;
+import com.project.library.entities.Reader;
+>>>>>>> 79183fa7e656eab8442d7ad7a64cc4aebaf058c3
 import com.project.library.entities.Manager;
 import com.project.library.entities.Reader;
 import com.project.library.entities.Reserve;
@@ -75,8 +80,14 @@ public class TestConfig implements CommandLineRunner{
 		bookRepository.saveAll(Arrays.asList(b1,b2,b3,b4));
 		
 		
+<<<<<<< HEAD
 		Reader re1 = new Reader(null, "halan Caio Pereira do Nascimento", "Hallan",
 				"583454", format.formatToDate("17/06/2001"), "8954589", "hallankayo20@gmail.com", "1234");
+=======
+		Reader re1 = new Reader(null, "halan Caio Pereira do Nascimento", "Hallan", 
+
+				"583454", format.formatToDate("17/06/2001"), "8954589", "hfesfdsop", "23432fdsf");
+>>>>>>> 79183fa7e656eab8442d7ad7a64cc4aebaf058c3
 
 		
 		Reader re2 = new Reader(null, "Carlos Eduardo", "Dudu", 
