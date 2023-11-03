@@ -47,7 +47,7 @@ public class Loan {
 		this.loanDate = loanDate;
 		this.LinkedReader = reader;
 		this.book = book;
-//		this.returnForecast = loanLocalDateTime.plus(Duration.ofDays(14));
+		this.returnForecast = loanDate.plusDays(14);
 	}
 
 	public Long getId() {
