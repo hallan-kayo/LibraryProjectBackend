@@ -1,6 +1,7 @@
 package com.project.library.config;
 
 import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +12,7 @@ import org.springframework.context.annotation.Profile;
 import com.project.library.entities.Adress;
 import com.project.library.entities.Book;
 import com.project.library.entities.Category;
-<<<<<<< HEAD
-=======
-import com.project.library.entities.Reader;
-import com.project.library.entities.Reader;
->>>>>>> 79183fa7e656eab8442d7ad7a64cc4aebaf058c3
+import com.project.library.entities.Loan;
 import com.project.library.entities.Manager;
 import com.project.library.entities.Reader;
 import com.project.library.entities.Reserve;
@@ -23,6 +20,7 @@ import com.project.library.format.DateFormat;
 import com.project.library.repositories.AdressRepository;
 import com.project.library.repositories.BookRepository;
 import com.project.library.repositories.CategoryRepository;
+import com.project.library.repositories.LoanRepository;
 import com.project.library.repositories.ManagerRepository;
 import com.project.library.repositories.ReaderRepository;
 import com.project.library.repositories.ReserveRepository;
@@ -52,6 +50,9 @@ public class TestConfig implements CommandLineRunner{
 	@Autowired
 	private ReserveRepository reserveRepository;
 	
+	@Autowired
+	private LoanRepository loanRepository;
+	
 	
 	
 	
@@ -80,42 +81,35 @@ public class TestConfig implements CommandLineRunner{
 		bookRepository.saveAll(Arrays.asList(b1,b2,b3,b4));
 		
 		
-<<<<<<< HEAD
 		Reader re1 = new Reader(null, "halan Caio Pereira do Nascimento", "Hallan",
 				"583454", format.formatToDate("17/06/2001"), "8954589", "hallankayo20@gmail.com", "1234");
-=======
-		Reader re1 = new Reader(null, "halan Caio Pereira do Nascimento", "Hallan", 
-
-				"583454", format.formatToDate("17/06/2001"), "8954589", "hfesfdsop", "23432fdsf");
->>>>>>> 79183fa7e656eab8442d7ad7a64cc4aebaf058c3
-
 		
 		Reader re2 = new Reader(null, "Carlos Eduardo", "Dudu", 
 				"753475", format.formatToDate("16/02/2003"), "6547", "hfesf6fgwgdsop", "gfdwg546");
 		
 		Reader re3 = new Reader(null, "Guilherme Roque", "Gui", 
-				"65465", format.formatToDate("1/10/1997"), "54646", "gfshh5646", "fgshhsy");
+				"65465", format.formatToDate("01/10/1997"), "54646", "gfshh5646", "fgshhsy");
 		
 		Reader re4 = new Reader(null, "Francisco Gabriel", "Chico",
-				"31321", format.formatToDate("1/11/1996"), "32312313", "chico32131", "uepb3213");
+				"31321", format.formatToDate("01/11/1996"), "32312313", "chico32131", "uepb3213");
 		
 		Reader re5 = new Reader(null, "Maria da Silva", "Maria",
-                "54321", format.formatToDate("5/5/1990"), "55555555", "maria32131", "uepb9876");
+                "54321", format.formatToDate("05/05/1990"), "55555555", "maria32131", "uepb9876");
 		
 		Reader re6 = new Reader(null, "João Pereira", "João",
-                "98765", format.formatToDate("10/3/1985"), "99999999", "joao9876", "uepb5432");
+                "98765", format.formatToDate("10/03/1985"), "99999999", "joao9876", "uepb5432");
 		
 		Reader re7 = new Reader(null, "Ana Silva", "Ana",
-                "87654", format.formatToDate("12/8/1992"), "77777777", "ana12345", "uepb6543");
+                "87654", format.formatToDate("12/08/1992"), "77777777", "ana12345", "uepb6543");
 		
 		Reader re8 = new Reader(null, "Pedro Oliveira", "Pedro",
-                 "12345", format.formatToDate("3/2/2000"), "88888888", "pedro54321", "uepb7890");
+                 "12345", format.formatToDate("03/02/2000"), "88888888", "pedro54321", "uepb7890");
 		
 		Reader re9 = new Reader(null, "Mariana Santos", "Mariana",
-                "45678", format.formatToDate("7/6/1998"), "66666666", "mariana98765", "uepb4321");
+                "45678", format.formatToDate("07/06/1998"), "66666666", "mariana98765", "uepb4321");
 		
 		Reader re10 = new Reader(null, "Vitoria Candeia", "Viiica", 
-				"323123", format.formatToDate("3/10/1998"), "123122321", "vitoriaviica321", "viksp231");
+				"323123", format.formatToDate("03/10/1998"), "123122321", "vitoriaviica321", "viksp231");
 
 
 				
@@ -177,6 +171,10 @@ public class TestConfig implements CommandLineRunner{
 		r2.setBook(b2);
 		r2.setLinkedReader(re2);
 		reserveRepository.saveAll(Arrays.asList(r1, r2));
+		
+		
+		Loan l1 = new Loan(format.formatDate(LocalDate.now()) , b1, re1);
+		loanRepository.save(l1);
 	}
 
 	

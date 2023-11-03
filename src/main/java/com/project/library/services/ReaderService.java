@@ -72,7 +72,7 @@ public class ReaderService {
 	private void updateData(Reader entity, Reader obj) {
 		entity.setName(obj.getName());
 		entity.setCPF(obj.getCPF());
-		entity.setDateOfBirth(obj.getDateOfBirth());
+		entity.setLocalDateOfBirth(obj.getLocalDateOfBirth());
 		entity.setEmail(obj.getEmail());
 		entity.setPassword(obj.getPassword());
 		entity.setUsername(obj.getUsername());
