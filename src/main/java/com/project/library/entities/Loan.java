@@ -1,7 +1,6 @@
 package com.project.library.entities;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -71,7 +70,7 @@ public class Loan {
 		return returnDate;
 	}
 
-	public void setReturnDate(LocalDateTime returnLocalDateTime) {
+	public void setReturnDate(LocalDate returnDate) {
 		this.returnDate = returnDate;
 	}
 

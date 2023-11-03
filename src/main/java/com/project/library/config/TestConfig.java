@@ -174,7 +174,16 @@ public class TestConfig implements CommandLineRunner{
 		
 		
 		Loan l1 = new Loan(format.formatDate(LocalDate.now()) , b1, re1);
-		loanRepository.save(l1);
+		Loan l2 = new Loan(format.formatDate(LocalDate.now()) , b3, re2);
+		Loan l3 = new Loan(format.formatDate(LocalDate.now()) , b1, re1);
+		Loan l4 = new Loan(format.formatDate(LocalDate.now()) , b4, re7);
+		Loan l5 = new Loan(format.formatDate(LocalDate.now()) , b3, re1);
+		Loan l6 = new Loan(format.formatDate(LocalDate.now()) , b2, re10);
+		Loan l7 = new Loan(format.formatDate(LocalDate.now()) , b2, re5);
+		Loan l8 = new Loan(format.formatDate(LocalDate.now()) , b3, re8);
+		Loan l9 = new Loan(format.formatDate(LocalDate.now()) , b4, re3);
+		Loan l10 = new Loan(format.formatDate(LocalDate.now()) , b4, re2);
+		loanRepository.saveAll(Arrays.asList(l1,l2,l3,l4,l5,l6,l7,l8,l9,l10));
 	}
 
 	
