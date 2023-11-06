@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.project.library.entities.Category;
 import com.project.library.repositories.CategoryRepository;
-import com.project.library.services.exceptions.DatabaseException;
 import com.project.library.services.exceptions.DeleteException;
 import com.project.library.services.exceptions.ResourceNotFoundException;
 

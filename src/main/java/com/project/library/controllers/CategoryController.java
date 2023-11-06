@@ -19,8 +19,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.project.library.entities.Category;
 import com.project.library.services.CategoryService;
 
-import jakarta.transaction.Transactional;
-
 @RestController
 @CrossOrigin("*")
 @RequestMapping(value = "/categories")
