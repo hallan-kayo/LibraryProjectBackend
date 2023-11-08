@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.project.library.entities.TrafficTicket;
 import com.project.library.repositories.TrafficTicketRepository;
-import com.project.library.services.exceptions.DatabaseException;
+import com.project.library.services.exceptions.DeleteException;
 import com.project.library.services.exceptions.ResourceNotFoundException;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -44,7 +44,7 @@ public class TrafficTicketService {
 			throw new ResourceNotFoundException(id);
 		}
 		catch(DataIntegrityViolationException e) {
-			throw new DatabaseException(e.getMessage());
+			throw new DeleteException(e.getMessage());
 		}
 	}
 	

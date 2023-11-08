@@ -9,10 +9,9 @@ import org.springframework.stereotype.Service;
 
 import com.project.library.entities.Adress;
 import com.project.library.entities.Manager;
-import com.project.library.entities.Manager;
 import com.project.library.repositories.AdressRepository;
 import com.project.library.repositories.ManagerRepository;
-import com.project.library.services.exceptions.DatabaseException;
+import com.project.library.services.exceptions.DeleteException;
 import com.project.library.services.exceptions.ResourceNotFoundException;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -52,7 +51,7 @@ public class ManagerService {
 			throw new ResourceNotFoundException(id);
 		}
 		catch(DataIntegrityViolationException e) {
-			throw new DatabaseException(e.getMessage());
+			throw new DeleteException(e.getMessage());
 		}
 		
 	}

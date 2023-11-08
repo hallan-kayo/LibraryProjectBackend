@@ -12,6 +12,7 @@ import com.project.library.entities.Category;
 import com.project.library.repositories.BookRepository;
 import com.project.library.repositories.CategoryRepository;
 import com.project.library.services.exceptions.DatabaseException;
+import com.project.library.services.exceptions.DeleteException;
 import com.project.library.services.exceptions.ResourceNotFoundException;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -54,7 +55,7 @@ public class BookService {
 			throw new ResourceNotFoundException(id);
 		}
 		catch(DataIntegrityViolationException e) {
-			throw new DatabaseException(e.getMessage());
+			throw new DeleteException(e.getMessage());
 		}
 	}
 	
