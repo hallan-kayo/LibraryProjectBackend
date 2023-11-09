@@ -111,7 +111,7 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Book [id=" + id + ", title=" + title + ", author=" + author + ", edition=" + edition + ", quantity="
+		return "Book [id=" + id +", categotia: "+ category.getId()+", "+ category.getName() +", title=" + title + ", author=" + author + ", edition=" + edition + ", quantity="
 				+ quantity + "]";
 	}
 

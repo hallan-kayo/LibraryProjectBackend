@@ -11,11 +11,8 @@ import org.springframework.context.annotation.Profile;
 import com.project.library.entities.Adress;
 import com.project.library.entities.Book;
 import com.project.library.entities.Category;
-<<<<<<< HEAD
-=======
 import com.project.library.entities.Reader;
 import com.project.library.entities.Reader;
->>>>>>> 79183fa7e656eab8442d7ad7a64cc4aebaf058c3
 import com.project.library.entities.Manager;
 import com.project.library.entities.Reader;
 import com.project.library.entities.Reserve;
@@ -26,6 +23,7 @@ import com.project.library.repositories.CategoryRepository;
 import com.project.library.repositories.ManagerRepository;
 import com.project.library.repositories.ReaderRepository;
 import com.project.library.repositories.ReserveRepository;
+import com.project.library.services.BookService;
 
 
 @Configuration
@@ -71,7 +69,6 @@ public class TestConfig implements CommandLineRunner{
 		Book b3 = new Book(null, "ADM", "auth3" , "7", 40);
 		Book b4 = new Book(null, "programação web", "auth4" , "1", 2);
 		
-		
 		b1.setCategory(cat1);
 		b2.setCategory(cat4);
 		b3.setCategory(cat3);
@@ -80,16 +77,10 @@ public class TestConfig implements CommandLineRunner{
 		bookRepository.saveAll(Arrays.asList(b1,b2,b3,b4));
 		
 		
-<<<<<<< HEAD
+
 		Reader re1 = new Reader(null, "halan Caio Pereira do Nascimento", "Hallan",
 				"583454", format.formatToDate("17/06/2001"), "8954589", "hallankayo20@gmail.com", "1234");
-=======
-		Reader re1 = new Reader(null, "halan Caio Pereira do Nascimento", "Hallan", 
 
-				"583454", format.formatToDate("17/06/2001"), "8954589", "hfesfdsop", "23432fdsf");
->>>>>>> 79183fa7e656eab8442d7ad7a64cc4aebaf058c3
-
-		
 		Reader re2 = new Reader(null, "Carlos Eduardo", "Dudu", 
 				"753475", format.formatToDate("16/02/2003"), "6547", "hfesf6fgwgdsop", "gfdwg546");
 		

@@ -1,19 +1,16 @@
 package com.project.library.services;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
-
 import com.project.library.entities.Book;
 import com.project.library.entities.Category;
 import com.project.library.repositories.BookRepository;
 import com.project.library.repositories.CategoryRepository;
 import com.project.library.services.exceptions.DatabaseException;
 import com.project.library.services.exceptions.ResourceNotFoundException;
-
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 
