@@ -1,8 +1,12 @@
 package com.project.library.entities;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
+<<<<<<< HEAD
+=======
+
+>>>>>>> eb9cab13b925c36268664d8d9595974d31e16076
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.project.library.entities.enums.ReaderStatus;
@@ -28,11 +32,11 @@ public class Reader extends Users {
 	public Reader() {
 	}
 	
-	public Reader(Long id, String name, String username, String CPF, Date dateOfBirth, String phone, String email, String password) {
+	public Reader(Long id, String name, String username, String CPF, LocalDate dateOfBirth, String phone, String email, String password) {
 		super(id, name, username, CPF,dateOfBirth,phone, email, password);
 	}
 	
-	public Reader(Long id, String name, String username, String CPF, Date dateOfBirth, String phone, String email, String password, Adress adress) {
+	public Reader(Long id, String name, String username, String CPF, LocalDate dateOfBirth, String phone, String email, String password, Adress adress) {
 		super(id, name, username, CPF,dateOfBirth,phone, email, password, adress);
 	}
 
@@ -42,7 +46,7 @@ public class Reader extends Users {
         return "Reader";
     }
 	
-	public ReaderStatus getOrderStatus() {
+	public ReaderStatus getReaderStatus() {
 		return ReaderStatus.valueOf(readerStatus);
 	}
 

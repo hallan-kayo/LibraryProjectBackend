@@ -1,6 +1,7 @@
 package com.project.library.entities;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDate;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -29,7 +30,7 @@ public class Users{
     private String name;
     private String username;
     private String CPF;
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
 	private String phone;
 	private String email;
 	private String password;
@@ -40,7 +41,7 @@ public class Users{
 	public Users() {
 	}
 	
-	public Users(Long id, String name, String username, String CPF, Date dateOfBirth, String phone, String email, String password) {
+	public Users(Long id, String name, String username, String CPF, LocalDate dateOfBirth, String phone, String email, String password) {
 		this.id = id;
 		this.name = name;
 		this.username = username;
@@ -51,7 +52,7 @@ public class Users{
 		this.password = password;
 	}
 	
-	public Users(Long id, String name, String username, String CPF, Date dateOfBirth, String phone, String email, String password, Adress adress) {
+	public Users(Long id, String name, String username, String CPF, LocalDate dateOfBirth, String phone, String email, String password, Adress adress) {
 		this.id = id;
 		this.name = name;
 		this.username = username;
@@ -100,11 +101,11 @@ public class Users{
 		this.CPF = CPF;
 	}
 	
-	public Date getDateOfBirth() {
+	public LocalDate getLocalDateOfBirth() {
 		return dateOfBirth;
 	}
 	
-	public void setDateOfBirth(Date dateOfBirth) {
+	public void setLocalDateOfBirth(LocalDate dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 	

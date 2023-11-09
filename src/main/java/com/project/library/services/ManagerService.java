@@ -9,10 +9,9 @@ import org.springframework.stereotype.Service;
 
 import com.project.library.entities.Adress;
 import com.project.library.entities.Manager;
-import com.project.library.entities.Manager;
 import com.project.library.repositories.AdressRepository;
 import com.project.library.repositories.ManagerRepository;
-import com.project.library.services.exceptions.DatabaseException;
+import com.project.library.services.exceptions.DeleteException;
 import com.project.library.services.exceptions.ResourceNotFoundException;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -52,7 +51,7 @@ public class ManagerService {
 			throw new ResourceNotFoundException(id);
 		}
 		catch(DataIntegrityViolationException e) {
-			throw new DatabaseException(e.getMessage());
+			throw new DeleteException(e.getMessage());
 		}
 		
 	}
@@ -73,7 +72,7 @@ public class ManagerService {
 	private void updateData(Manager entity, Manager obj) {
 		entity.setName(obj.getName());
 		entity.setCPF(obj.getCPF());
-		entity.setDateOfBirth(obj.getDateOfBirth());
+		entity.setLocalDateOfBirth(obj.getLocalDateOfBirth());;
 		entity.setEmail(obj.getEmail());
 		entity.setPassword(obj.getPassword());
 		entity.setUsername(obj.getUsername());

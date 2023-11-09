@@ -1,11 +1,10 @@
 package com.project.library.entities;
 
-import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,9 +21,9 @@ public class Loan {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private Instant loanDate;
-	private Instant returnDate;
-	private Instant returnForecast;
+	private LocalDate loanDate;
+	private LocalDate returnDate;
+	private LocalDate returnForecast;
 	
 	@ManyToOne
 	@JsonIgnore
@@ -38,10 +37,17 @@ public class Loan {
 	private TrafficTicket trafficTicket;
 
 
-	@ManyToOne
-	private Manager linkedManager = new Manager();
+//	@ManyToOne
+//	private Manager linkedManager = new Manager();
 
 	public Loan() {
+	}
+	
+	public Loan(LocalDate loanDate, Book book, Reader reader) {
+		this.loanDate = loanDate;
+		this.LinkedReader = reader;
+		this.book = book;
+		this.returnForecast = loanDate.plusDays(14);
 	}
 
 	public Long getId() {
@@ -52,27 +58,27 @@ public class Loan {
 		this.id = id;
 	}
 
-	public Instant getLoanDate() {
+	public LocalDate getLoanDate() {
 		return loanDate;
 	}
 
-	public void setLoanDate(Instant loanDate) {
+	public void setLoanLocalDateTime(LocalDate loanDate) {
 		this.loanDate = loanDate;
 	}
 
-	public Instant getReturnDate() {
+	public LocalDate getReturndate() {
 		return returnDate;
 	}
 
-	public void setReturnDate(Instant returnDate) {
+	public void setReturnDate(LocalDate returnDate) {
 		this.returnDate = returnDate;
 	}
 
-	public Instant getReturnForecast() {
+	public LocalDate getReturnForecast() {
 		return returnForecast;
 	}
 
-	public void setReturnForecast(Instant returnForecast) {
+	public void setReturnForecast(LocalDate returnForecast) {
 		this.returnForecast = returnForecast;
 	}
 
@@ -92,13 +98,13 @@ public class Loan {
 		LinkedReader = linkedReader;
 	}
 
-	public Manager getLinkedManager() {
-		return linkedManager;
-	}
-
-	public void setLinkedManager(Manager linkedManager) {
-		this.linkedManager = linkedManager;
-	}
+//	public Manager getLinkedManager() {
+//		return linkedManager;
+//	}
+//
+//	public void setLinkedManager(Manager linkedManager) {
+//		this.linkedManager = linkedManager;
+//	}
 
 	@Override
 	public int hashCode() {
@@ -119,7 +125,7 @@ public class Loan {
 
 	@Override
 	public String toString() {
-		return "Loan [id=" + id + ", loanDate=" + loanDate + ", returnDate=" + returnDate + ", returnForecast="
+		return "Loan [id=" + id + ", loanLocalDateTime=" + loanDate + ", returnLocalDateTime=" + returnDate+ ", returnForecast="
 				+ returnForecast + ", book=" + book + "]";
 	}
 	
