@@ -71,6 +71,11 @@ public class BookService {
 
 	private void updateData(Book entity, Book obj) {
 		entity.setTitle(obj.getTitle());
+		entity.setAuthor(obj.getAuthor());
+		entity.setEdition(obj.getEdition());
+		entity.setQuantity(obj.getQuantity());
+		entity.setCategory(obj.getCategory());
+		
 	}
 	
 }

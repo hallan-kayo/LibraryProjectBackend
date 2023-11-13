@@ -3,10 +3,6 @@ package com.project.library.entities;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
-<<<<<<< HEAD
-=======
-
->>>>>>> eb9cab13b925c36268664d8d9595974d31e16076
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.project.library.entities.enums.ReaderStatus;
