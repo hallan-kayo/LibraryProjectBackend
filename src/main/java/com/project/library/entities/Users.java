@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDate;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -30,6 +31,7 @@ public class Users{
     private String name;
     private String username;
     private String CPF;
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateOfBirth;
 	private String phone;
 	private String email;
