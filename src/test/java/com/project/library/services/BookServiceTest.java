@@ -65,7 +65,7 @@ public class BookServiceTest {
 	@Test
 	public void TestarSeUmLivroFoiDeletado() {
 
-		long LivroASerDeletado = bookService.findByid(5L).getId();
+		long LivroASerDeletado = bookService.findByid(10L).getId();
 		List<Book> esperado = bookRepository.findAll();
 		bookService.deleteBook(LivroASerDeletado);
 		List<Book> ListaLivros = bookRepository.findAll();
